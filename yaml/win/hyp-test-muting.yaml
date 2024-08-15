@@ -1,0 +1,20 @@
+---
+version: 0.2
+runson: win
+
+autosplit: true
+concurrency: 4
+
+retryOnFailure: true
+maxRetries: 5
+
+pre:
+  - mvn dependency:resolve
+
+framework:
+  name: maven/testng
+  defaultReports: false
+  flags:
+    - "-Dplatname=win"
+
+jobLabel: ['Test History and Muting']
